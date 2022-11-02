@@ -1,10 +1,22 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Helmet } from 'react-helmet';
+
+import ScoreCalculator from './components/ScoreCalculator';
 
 function App() {
   return (
+    // <div className="App">
     <div className="App">
-      <header className="App-header">
+      <Helmet>
+        <title>Score Calculator App</title>
+      </Helmet>
+      <ScoreCalculator />
+
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +29,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }

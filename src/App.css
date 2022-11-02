@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.border-box {
+  border: 1px solid !important;
+  width: 300px;
+  display: inline-block;
+  align-self: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #d3b6eefa;
+}
+
+.name-field {
+  width: 250px !important;
+}
+
+.score-field {
+  width: 70px !important;
+}
+
+.error-field {
+  border: 1px solid red !important;
+}
+
+.error_message {
+  color: red;
+  font-size: 9px;
+}
