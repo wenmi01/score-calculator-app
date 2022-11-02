@@ -68,7 +68,7 @@ function ScoreCalculator() {
         const fieldValue = event.target.value;
 
         let average;
-
+        
         // '   console.log("first name");' + 
         let name_fields = ['first_name', 'last_name'];
         let nameValidator = "";
@@ -80,17 +80,22 @@ function ScoreCalculator() {
             '   setErrors(values=>({...values, ' + item + ': "", ' + item + '_fieldClass: ""}));' +
             '};';
         });
-        console.log(nameValidator);
-        eval(nameValidator);
         
-        
-       
         average = -1;
         average = (parseFloat(inputs.score1) + parseFloat(inputs.score2) + parseFloat(inputs.score3)) / 3;
         inputs.average = average >= 0 && average <= 100 ? average : "There are invalid values in scores.";
         inputs.gradeComment = average >=75 ? 'Passed' : 'Failed';
 
         inputs.gradeComment = inputs.average === "There are invalid values in scores." ? "" : inputs.gradeComment;
+
+        console.log(nameValidator);
+        eval(nameValidator);
+
+        if(errors.first_name === "This field is required." || errors.last_name === "This field is required."){
+            inputs.gradeComment = "Name must be complete.";
+            // setInputs(values=>({...values, gradeComment: "Name must be complete."}));
+            console.log("NAME Error");
+        }
 
         setInputs(values=>({...values, [fieldName]: fieldValue }));
 
